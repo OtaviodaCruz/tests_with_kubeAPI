@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ndn-microservice-content-store
+  namespace: ndn
+spec:
+  containers:
+  - name: ndn-microservice-content-store
+    image: otaviocruz/ndn_microservice-content_store:test
+    command: ["/metrics-server", "--metric-resolution=55s"]
+    command: ["/CS"]
+    args: ["-n", "cs1", "-s", "100000", "-p", "6363", "-C", "10000"]
